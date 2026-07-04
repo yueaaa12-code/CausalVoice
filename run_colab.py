@@ -37,7 +37,7 @@ def stage_setup():
     import torch
     assert torch.cuda.is_available(), "ERROR: No GPU detected! Select GPU runtime in Colab."
     gpu_name = torch.cuda.get_device_name(0)
-    gpu_mem = torch.cuda.get_device_properties(0).total_mem / 1e9
+    gpu_mem = torch.cuda.get_device_properties(0).total_memory / 1e9
     print(f"✓ GPU: {gpu_name} ({gpu_mem:.1f} GB)")
     print(f"✓ PyTorch: {torch.__version__}")
     print(f"✓ CUDA: {torch.version.cuda}")

@@ -61,7 +61,7 @@ def spectrogram_torch(y, n_fft, sampling_rate, hop_size, win_size, center=False)
                                 mode='reflect')
     y = y.squeeze(1)
 
-    spec = torch.stft(y, n_fft, hop_length=hop_size, win_length=win_size,
+    spec = torch.stft(y.float(), n_fft, hop_length=hop_size, win_length=win_size,
                       window=hann_window_cache[wnsize_dtype_device],
                       center=center, pad_mode='reflect', normalized=False,
                       onesided=True, return_complex=True)
